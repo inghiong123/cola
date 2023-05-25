@@ -1,0 +1,21 @@
+
+spring:
+  datasource:
+    url: jdbc:mysql://10.8.6.180:3306/cola?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT
+    username: root
+    password: 123456
+
+mybatis-plus:
+#  映射xml文件路径
+  mapper-location: classpath:/mapper/*.xml
+#  简化xml resultMap中的包路径 自动扫描包
+  type-aliases-package: com.fast.cola.entity
+  configuration:
+#    开启日志打印
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#    驼峰式命名 数据库字段user_name Java userName
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+#      主键类型 雪花Id
+      id-type: ASSIGN_ID
